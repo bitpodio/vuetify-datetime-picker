@@ -1,11 +1,13 @@
 {
-  "name": "vuetify-datetime-picker",
+  "name": "@bitpod/vuetify-datetime-picker",
   "version": "2.1.1",
   "description": "DatetimePicker component for Vuetify.js.",
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack/webpack.dev.config.js",
     "build": "webpack --config webpack/webpack.build.config.js --progress --profile --colors",
+    "lint": "eslint --ext .ts,.js,.vue .",
+    "clean": "rimraf dist",
     "deploy": "npm run build && npm publish --registry https://registry.npmjs.org/",
     "docs": "webpack --config webpack/webpack.docs.config.js --progress --profile --colors"
   },
@@ -36,6 +38,7 @@
     "html-webpack-plugin": "^3.2.0",
     "less-loader": "^5.0.0",
     "prettier": "1.18.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.22.10",
     "sass-loader": "^7.2.0",
     "stylus": "^0.54.5",
