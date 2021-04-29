@@ -15,6 +15,14 @@
             <v-progress-linear color="primary" indeterminate absolute height="2"></v-progress-linear>
           </slot>
         </template>
+        <template v-if="hasErrorTooltip" v-slot:message="{ message, key }">
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <span v-bind="attrs" v-on="on" :key="key">{{ message }}</span>
+            </template>
+            <span :key="key">{{ message }}</span>
+          </v-tooltip>
+        </template>
       </v-text-field>
     </template>
 
@@ -116,6 +124,10 @@ export default {
     },
     timePickerProps: {
       type: Object
+    },
+    hasErrorTooltip: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
